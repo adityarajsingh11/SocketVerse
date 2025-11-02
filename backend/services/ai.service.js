@@ -112,6 +112,7 @@ const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash",
     generationConfig: {
         responseMimeType: "application/json",
+        temperature: 0.4,
     },
     systemInstruction: `
         You are an expert in MERN and Development.
@@ -181,6 +182,8 @@ const model = genAI.getGenerativeModel({
             "text":"Hello, How can I help you today?"
         }
         </example>
+
+        IMPORTANT : don't use file name like routes/index.js
     `
 });
 

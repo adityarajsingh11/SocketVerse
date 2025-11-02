@@ -567,7 +567,7 @@ function Project() {
               <div
                 key={index}
                 className={`${
-                  msg.sender._id === "ai" ? "max-w-80" : "max-w-54"
+                  msg.sender._id === "ai" ? "max-w-80" : "max-w-52"
                 } ${
                   msg.sender._id == user._id.toString() && "ml-auto"
                 } message flex flex-col p-2 bg-slate-50 w-fit rounded-md`}
@@ -650,21 +650,53 @@ function Project() {
           </div>
         </div>
 
-        {currentFile && (
+        
           <div className="code-editor flex flex-col flex-grow h-full shrink">
             {/* Open Files Tabs */}
-            <div className="top flex">
-              {openFiles.map((file, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentFile(file)}
-                  className={`open-file cursor-pointer p-2 px-4 flex items-center w-fit gap-2 bg-slate-300 ${
-                    currentFile === file ? "bg-slate-400" : ""
-                  }`}
-                >
-                  <p className="font-semibold text-lg">{file}</p>
-                </button>
-              ))}
+            <div className="top flex justify-between w-full">
+              <div>
+                {openFiles.map((file, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentFile(file)}
+                    className={`open-file cursor-pointer p-2 px-4 flex items-center w-fit gap-2 bg-slate-300 ${
+                      currentFile === file ? "bg-slate-400" : ""
+                    }`}
+                  >
+                    <p className="font-semibold text-lg">{file}</p>
+                  </button>
+                ))}
+              </div>
+              <div className="actions flex gap-2">
+                  <button
+                      onClick={async () => {
+                          await webContainer.mount(fileTree)
+                          
+                          
+                          const installProcess = await webContainer.spawn("npm", [ "install" ])
+
+                          
+                          
+                          installProcess.output.pipeTo(new WritableStream({
+                              write(chunk) {
+                                  console.log(chunk)
+                              }
+                          }))
+
+                          const runProcess = await webContainer.spawn("npm", [ "start" ])
+
+                          runProcess.output.pipeTo(new WritableStream({
+                              write(chunk) {
+                                  console.log(chunk)
+                              }
+                          }))
+
+                      }}
+                      className='p-2 px-4 bg-slate-300 text-white'
+                  >
+                      run
+                  </button>
+              </div>
             </div>
 
             {/* Editable Area */}
@@ -703,7 +735,7 @@ function Project() {
               )}
             </div>
           </div>
-        )}
+      
       </section>
 
       {/* Collaborator Modal */}
