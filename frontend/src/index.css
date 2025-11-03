@@ -2,9 +2,20 @@
 
 
 
-.message-box{
+/* .message-box{
   scroll-behavior: smooth;
 }
 .message-box::-webkit-scrollbar{
   display: none;
+} */
+
+
+/* ==== Hide scrollbar globally (used in chat, modal lists, etc.) ==== */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
