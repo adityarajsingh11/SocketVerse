@@ -89,23 +89,45 @@ backend/
 ```
 
 
+
+
 ---
 
 ## 🧰 Prerequisites
 
-Before you begin, make sure you have the following installed:
+Before you begin, ensure your development environment meets the following requirements:
 
-- [Node.js (v18+)](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
-- [MongoDB](https://www.mongodb.com/)
-- (Optional) Redis for caching (if you enable it)
+| Requirement | Version | Description |
+|--------------|----------|--------------|
+| 🟢 **Node.js** | v18 or later | Required for both frontend & backend |
+| 📦 **npm** or **pnpm** | Latest | Package manager (comes with Node.js) |
+| 🍃 **MongoDB** | v6 or later | Used for storing users, chats, and project data |
+| 🔐 **.env file** | — | Required for API keys, DB connection & secrets |
+| ⚙️ **Git** | Latest | For cloning and version control |
+| 🔄 *(Optional)* **Redis** | — | For caching and socket optimization |
+
+> 💡 **Tip:** You can verify installations by running:  
+> ```bash
+> node -v
+> npm -v
+> git --version
+> mongod --version
+> ```
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the Repository
+Follow these steps carefully to set up and run **SocketVerse** locally 👇  
+
+---
+
+### 🪄 Step 1: Clone the Repository
 ```bash
-git clone https://github.com/adityarajsingh11/SocketVerse.git
+# Clone the repository
+git clone https://github.com/yourusername/SocketVerse.git
+
+# Navigate into the project
 cd SocketVerse
+---
 
