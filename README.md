@@ -54,5 +54,23 @@ Each part runs independently but communicates in real-time through the WebSocket
 
 ### 🖥️ Frontend
 
+```
+
+frontend/
+├── public/
+│ └── index.html
+├── src/
+│ ├── assets/ # Static assets (images, icons, etc.)
+│ ├── components/ # Reusable UI components
+│ ├── context/ # UserContext for authentication state
+│ ├── auth/ # Protected route handler (UserAuth)
+│ ├── screens/ # Pages like Login, Register, Home, Project, Overview, Profile
+│ ├── routes/ # AppRoutes.jsx
+│ ├── config/ # Axios, socket config files
+│ ├── App.jsx
+│ └── main.jsx
+└── package.json
+
+```
 
 
