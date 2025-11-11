@@ -1,8 +1,15 @@
-# ⚡ SocketVerse — Real-Time Developer Collaboration Platform
+# ⚡ SocketVerse — Talk. Build. Sync.
 
-![SocketVerse Banner](https://your-banner-image-url-here) <!-- Optional banner -->
+![React](https://img.shields.io/badge/Frontend-React_19-blue?logo=react)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js)
+![Socket.IO](https://img.shields.io/badge/Realtime-Socket.IO-black?logo=socket.io)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen?logo=mongodb)
+![TailwindCSS](https://img.shields.io/badge/UI-TailwindCSS-38B2AC?logo=tailwindcss)
+![License](https://img.shields.io/badge/License-MIT-yellow?logo=open-source-initiative)
 
-> 🚀 **SocketVerse** is a full-stack real-time collaboration platform that empowers developers to **chat, build, and deploy projects live** — powered by **Socket.IO**, **WebContainers**, and **AI Assistance**.
+**SocketVerse** is a full-stack developer collaboration app where you can  
+💬 Chat in real-time, 🧑‍💻 share and edit code instantly, and 🤖 get AI-powered suggestions —  
+all built on top of **React**, **Node.js**, and **Socket.IO**.
 
 ---
 
