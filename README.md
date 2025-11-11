@@ -89,3 +89,23 @@ backend/
 ```
 
 
+---
+
+## 🧰 Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+- [Node.js (v18+)](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
+- [MongoDB](https://www.mongodb.com/)
+- (Optional) Redis for caching (if you enable it)
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/adityarajsingh11/SocketVerse.git
+cd SocketVerse
+
