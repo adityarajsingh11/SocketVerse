@@ -60,17 +60,32 @@ frontend/
 ├── public/
 │ └── index.html
 ├── src/
-│ ├── assets/ # Static assets (images, icons, etc.)
+│ ├── assets/     # Static assets (images, icons, etc.)
 │ ├── components/ # Reusable UI components
-│ ├── context/ # UserContext for authentication state
-│ ├── auth/ # Protected route handler (UserAuth)
-│ ├── screens/ # Pages like Login, Register, Home, Project, Overview, Profile
-│ ├── routes/ # AppRoutes.jsx
-│ ├── config/ # Axios, socket config files
+│ ├── context/    # UserContext for authentication state
+│ ├── auth/       # Protected route handler (UserAuth)
+│ ├── screens/    # Pages like Login, Register, Home, Project, Overview, Profile
+│ ├── routes/     # AppRoutes.jsx
+│ ├── config/     # Axios, socket config files
 │ ├── App.jsx
 │ └── main.jsx
 └── package.json
 
+```
+
+
+### ⚙️ Backend
+
+```
+backend/
+├── models/       # Mongoose Schemas (User, Project, etc.)
+├── routes/       # Express routes (auth, user, chat, etc.)
+├── controllers/  # API logic
+├── middleware/   # Auth validation, error handling
+├── utils/        # Helper functions, JWT handling
+├── .env          # Environment variables
+├── server.js     # Entry point
+└── package.json
 ```
 
 
