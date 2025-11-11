@@ -136,6 +136,17 @@ Before you begin, ensure your development environment meets the following requir
 
 ---
 
+---
+## 🚀 Usage Guide
+
+1. Register or Login with your credentials  
+2. Create or join a project  
+3. Start chatting and sharing code in real time  
+4. Use the AI assistant for help and suggestions  
+5. Deploy your project directly from the browser
+
+---
+
 ## ⚙️ Installation & Setup
 
 Follow these steps carefully to set up and run **SocketVerse** locally 👇  
@@ -192,3 +203,13 @@ Frontend → http://localhost:5173
 Backend → http://localhost:5000
 ```
 
+## 🪪 License
+This project is licensed under the **MIT License** — feel free to use and modify.
+
+## 💬 Contact
+
+👨‍💻 **Aditya Raj Singh**  
+📧 Email: [9555adityarajsingh@gmail.com](mailto:9555adityarajsingh@gmail.com)  
+🐙 GitHub: [@adityarajsingh11](https://github.com/adityarajsingh11)  
+💼 LinkedIn: [@adityarajsingh117](https://linkedin.com/in/adityarajsingh117)  
+🐦 X (Twitter): [@_op_aditya_11](https://x.com/_op_aditya_11)
