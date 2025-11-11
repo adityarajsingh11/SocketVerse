@@ -22,3 +22,37 @@
 
 **SocketVerse** is divided into two main folders:
 
+
+Each part runs independently but communicates in real-time through the WebSocket connection.
+
+---
+
+## 🧠 Tech Stack
+
+### 🖥️ Frontend
+- ⚛️ **React 19**
+- 🎨 **TailwindCSS 4**
+- 🎬 **Framer Motion** (animations)
+- 🧭 **React Router v7**
+- 💬 **Socket.IO Client**
+- 💡 **Lucide React Icons**
+- 🧠 **Markdown-to-JSX** for rendering messages/code
+- 🔥 **Vite** for ultra-fast development
+
+### 🧩 Backend
+- ⚙️ **Node.js + Express**
+- 🧵 **Socket.IO**
+- 🧱 **MongoDB + Mongoose**
+- 🔒 **JWT + Bcrypt** for authentication & password hashing
+- 📡 **CORS + Morgan** for API handling and logging
+- 🤖 **@google/generative-ai** for smart AI code responses
+- 🚦 **Express-Validator** for input validation
+
+---
+
+## 🗂️ Folder Structure
+
+### 🖥️ Frontend
+
+
+
