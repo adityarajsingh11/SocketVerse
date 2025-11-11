@@ -1,6 +1,3 @@
-
-
-
 import React from 'react'
 import { Routes, BrowserRouter, Route } from 'react-router-dom'
 import Login from '../screens/Login'

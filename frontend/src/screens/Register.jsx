@@ -1,22 +1,24 @@
-
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import axios from "../config/axios";
 import { UserContext } from "../context/user.context";
-import { UserPlus, Sparkles, Lock, Mail, Code2, Rocket } from "lucide-react";
+import { UserPlus, Sparkles, Lock, Mail, Code2, Rocket, AlertCircle } from "lucide-react";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(""); // ❗ added error message
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   async function submitHandler(e) {
     e.preventDefault();
     setLoading(true);
+    setError(""); // reset error
+
     try {
       const res = await axios.post("/users/register", { email, password });
       localStorage.setItem("token", res.data.token);
@@ -24,7 +26,15 @@ const Register = () => {
       navigate("/");
     } catch (err) {
       console.error(err.response?.data || err.message);
-      alert(err.response?.data?.message || "Registration failed");
+
+      // 🧠 Proper readable error message
+      const msg = err.response?.data?.message || err.message;
+
+      if (msg.includes("E11000") || msg.includes("duplicate")) {
+        setError("User with this email already exists! Please try logging in.");
+      } else {
+        setError("Registration failed. Please try again later.");
+      }
     } finally {
       setLoading(false);
     }
@@ -76,7 +86,6 @@ const Register = () => {
             Let’s sync minds ⚡
           </p>
 
-          {/* Floating Lucide icons */}
           <div className="flex gap-8 mt-4">
             <motion.div
               animate={{ y: [0, -8, 0] }}
@@ -103,12 +112,27 @@ const Register = () => {
         </div>
 
         {/* RIGHT SIDE — Form */}
-        <div className="md:w-1/2 p-10 bg-slate-950 flex flex-col justify-center text-slate-200">
+        <div className="md:w-1/2 p-10 bg-slate-950 flex flex-col justify-center text-slate-200 relative">
           <h2 className="text-3xl font-bold text-center mb-8 text-blue-400">
             Create Your Account
           </h2>
 
           <form onSubmit={submitHandler} className="space-y-6">
+            {/* ⚠️ Error Message */}
+            <AnimatePresence>
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="flex items-center gap-2 p-3 mb-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm shadow-sm"
+                >
+                  <AlertCircle size={18} />
+                  <span>{error}</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             {/* Email */}
             <div>
               <label className="block text-sm font-semibold mb-2 text-slate-300 flex items-center gap-2">
@@ -166,7 +190,6 @@ const Register = () => {
             </motion.button>
           </form>
 
-          {/* Footer */}
           <p className="text-center text-sm text-slate-400 mt-6">
             Already have an account?{" "}
             <Link
